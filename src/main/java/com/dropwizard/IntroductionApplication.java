@@ -15,7 +15,7 @@ import java.util.List;
 public class IntroductionApplication extends Application<ProjectConfig> {
 
     public static void main(String[] args) throws Exception {
-        new IntroductionApplication().run("server", "application.yml");
+        new IntroductionApplication().run(args);
     }
 
     @Override
@@ -39,6 +39,7 @@ public class IntroductionApplication extends Application<ProjectConfig> {
     @Override
     public void initialize(Bootstrap<ProjectConfig> bootstrap) {
         bootstrap.setConfigurationSourceProvider(new ResourceConfigurationSourceProvider());
+        bootstrap.addCommand(new WaitingCmd(this));
         super.initialize(bootstrap);
     }
 }
