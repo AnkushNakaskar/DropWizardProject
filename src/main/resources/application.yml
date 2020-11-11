@@ -1,1 +1,14 @@
+server:
+  adminMinThreads: 1
+  adminMaxThreads: 64
+  applicationConnectors:
+    - type: http
+      port: 8989
+  adminConnectors:
+    - type: http
+      port: 8988
+
 defaultSize: 5
+# Discovery-related settings.
+discovery:
+  serviceName: callingService
